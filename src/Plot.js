@@ -1,4 +1,5 @@
 import { Line } from '@antv/g2plot';
+//create line plot
 function Plot() {
   const data = [
     { week: '1', position: -1500, score: 100 },
@@ -16,8 +17,11 @@ function Plot() {
   ];
  
   // console.log(data);
+  //config for plot
   const line = new Line('plot', {
     data: data,
+    height: 300,
+    width:400,
     padding: 'auto',
     xField: 'week',
     yField: 'position',
@@ -47,4 +51,4 @@ function Plot() {
   
   return  line;
 }
-export default Plot;
+export default Plot
