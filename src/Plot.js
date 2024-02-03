@@ -15,10 +15,12 @@ function Plot() {
     { week: '11', position: -500, score: 645 },
     { week: '12', position: -400, score: 700 },
   ]
+
+  let newData = [{ week: '1', position: -1500, score: 200 }]
   // console.log(data);
   //config for plot
   const line = new Line('plot', {
-    data: data,
+    data: newData,
     height: 300,
     width: 400,
     padding: 'auto',
@@ -52,7 +54,7 @@ function Plot() {
         },
       },
     },
-    
+
     annotations: [
       {
         type: 'regionFilter',
@@ -84,6 +86,69 @@ function Plot() {
     point: {},
   });
   
+  //as herself
+  let deltaLocal;
+  let i = 0;
+
+  //timer function to update data step by step
+  function setTimer (delay) {
+    let timer = setInterval(function run() {
+      //select elements to display changes
+      const DELTA = document.querySelector(".delta");
+      const POSITION = document.querySelector(".position");
+      const SCORE = document.querySelector(".score");
+      const UP_ARROW = document.querySelector(".up-arrow");
+      const DOWN_ARROW = document.querySelector(".down-arrow");
+      const MINUS = document.querySelector(".minus");
+      
+      //update data and compare changes
+      deltaLocal = data[i].position - newData[i].position;
+      newData.push(data[i]);
+      
+      //update plot
+      line.changeData(newData);
+
+      POSITION.textContent = `${-newData[i].position}/1888`
+      SCORE.textContent = `${newData[i].score}/1373`
+      
+      //condition for delta arrows
+      if (deltaLocal > 0) {
+        DELTA.textContent = deltaLocal;
+        MINUS.classList.remove("show");
+        DOWN_ARROW.classList.remove("show");
+        UP_ARROW.classList.add("show");
+        DELTA.style.color = "green";
+      } else if (deltaLocal < 0){
+        DELTA.textContent = deltaLocal;
+        MINUS.classList.remove("show");
+        UP_ARROW.classList.remove("show");
+        DOWN_ARROW.classList.add("show")
+        DELTA.style.color = "red";
+      } else {
+        DELTA.textContent = "";
+        MINUS.classList.add("show");
+        UP_ARROW.classList.remove("show");
+        DOWN_ARROW.classList.remove("show")
+        DELTA.style.color = "gray";
+      }
+
+      // console.log('data', newData, data, "shift", deltaLocal);
+      i += 1;
+      
+      //loop it
+      if (i === 12) {
+        clearInterval(timer);
+
+        i = 0;
+        newData =[]
+        newData = [{ week: '1', position: -1500, score: 200 }];
+        
+        setTimer (2000);
+      }
+    }, delay);
+  }
+  setTimer(2000);
+
   return  line;
 }
-export default Plot
+export default Plot;
