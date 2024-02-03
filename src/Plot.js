@@ -23,11 +23,9 @@ function Plot() {
     data: newData,
     height: 300,
     width: 400,
-    renderer: "svg",
     padding: "auto",
     xField: "week",
     yField: "position",
-    seriesField: "score",
     lineStyle: {
       shadowColor: "black",
       shadowBlur: 10,
@@ -56,33 +54,6 @@ function Plot() {
       },
     },
 
-    annotations: [
-      {
-        type: "regionFilter",
-        start: ["min", -700],
-        end: ["max", "0"],
-        color: "gold",
-      },
-      {
-        type: "text",
-        position: ["min", -800],
-        content: "70% border",
-        offsetY: -4,
-        style: {
-          textBaseline: "top",
-          fill: "gold",
-        },
-      },
-      {
-        type: "line",
-        start: ["min", -700],
-        end: ["max", -700],
-        style: {
-          stroke: "gold",
-          lineDash: [2, 2],
-        },
-      },
-    ],
     smooth: true,
     point: {},
   });
@@ -95,7 +66,7 @@ function Plot() {
     let timer = setInterval(function run() {
       //as herself
       let deltaLocal = 0;
-      
+
       //select elements to display changes
       const DELTA = document.querySelector(".delta");
       const POSITION = document.querySelector(".position");
