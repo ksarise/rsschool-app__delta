@@ -23,7 +23,7 @@ root.render(
             <div className="ant-card-body">
               <div className="ant-card-grid">
                 <div className="ant-image">
-                  <img className="ant-image-img" src="/images/im-fine.svg" alt="" />
+                  <img className="ant-image-img" src="images/im-fine.svg" alt="" />
                 </div>
               </div>
               <div className="ant-cart-grid">
@@ -45,9 +45,9 @@ root.render(
                       <span className='diffs'>
                         <span className="arrows">
                           {/* Beautiful svg arrows :3 */}
-                          <img className="arrow down-arrow" src="/images/down-arrow.svg" alt="" />
-                          <img className="minus show" src="/images/minus.svg" alt="" />
-                          <img className="arrow up-arrow" src="/images/up-arrow.svg" alt="" />
+                          <img className="arrow down-arrow" src="images/down-arrow.svg" alt="" />
+                          <img className="minus show" src="images/minus.svg" alt="" />
+                          <img className="arrow up-arrow" src="images/up-arrow.svg" alt="" />
                         </span>
                         <span className='delta'></span>
                       </span>

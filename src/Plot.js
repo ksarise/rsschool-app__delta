@@ -23,6 +23,7 @@ function Plot() {
     data: newData,
     height: 300,
     width: 400,
+    renderer: 'svg',
     padding: 'auto',
     xField: 'week',
     yField: 'position',
@@ -104,7 +105,7 @@ function Plot() {
       //update data and compare changes
       deltaLocal = data[i].position - newData[i].position;
       newData.push(data[i]);
-      
+
       //update plot
       line.changeData(newData);
 
