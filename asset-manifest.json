@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rsschool-app__delta/static/css/main.c7922abf.css",
+    "main.js": "/rsschool-app__delta/static/js/main.d49d742f.js",
+    "index.html": "/rsschool-app__delta/index.html",
+    "main.c7922abf.css.map": "/rsschool-app__delta/static/css/main.c7922abf.css.map",
+    "main.d49d742f.js.map": "/rsschool-app__delta/static/js/main.d49d742f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7922abf.css",
+    "static/js/main.d49d742f.js"
+  ]
+}
