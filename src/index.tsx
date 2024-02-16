@@ -1,15 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import Plot from './Plot.js';
-import reportWebVitals from './reportWebVitals';
+import Plot from './Plot';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  //TODO: separate in different modules
+ReactDOM.render(
   <React.StrictMode>
-    {/* an attempt to recreate the original rssapp design and dom structure. */}
-    <div className="ant-layout">
+      {/* an attempt to recreate the original rssapp design and dom structure. */}
+      <div className="ant-layout">
       <main className="ant-layout-content">
         <div className="ant-spin-container">
           <div className="ant-card">
@@ -97,7 +94,6 @@ root.render(
         </div>
       </main>
     </div>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-reportWebVitals();
