@@ -7,12 +7,22 @@ const config = {
   xField: "week",
   yField: "position",
   smooth: true,
+  forceFit: true,
+  point: {
+    size: 5,
+    shape: 'circle',
+    style: {
+      fill: '#077aed',
+      stroke: '#5B8FF9',
+      lineWidth: 2,
+    },
+  },
   lineStyle: {
     shadowColor: "black",
     shadowBlur: 10,
     shadowOffsetX: 5,
     shadowOffsetY: 5,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   xAxis: {
     nice: true,
@@ -33,12 +43,7 @@ const config = {
         fontSize: 16,
       },
     },
-  },
-  meta: {
-    value: {
-      max: 15,
-    },
-  },
+  }
 }
 
 export default  () => {
