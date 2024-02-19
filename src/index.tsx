@@ -37,7 +37,7 @@ ReactDOM.render(
                     </span>
                     <span className="ant-typography css-nllxry position-block">
                       {/* Position value */}
-                       <strong className='position'>1532/1888</strong>
+                       <strong className='position'>1500/1888</strong>
                       {/* Diffs block start*/}
                       <span className='diffs'>
                         <span className="arrows">
@@ -63,7 +63,7 @@ ReactDOM.render(
                     </span>
                     <span className="ant-typography css-nllxry">
                       {/* Score value */}
-                      <strong className='score'>369/1373</strong>
+                      <strong className='score'>200/1373</strong>
                     </span>
                   </div>
                 </div>

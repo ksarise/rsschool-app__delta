@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Title
+Idea: enhanced UX for rankings (?)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description
 
-## Available Scripts
+Feature request for implementation of a new statistical indicator by changing an existing widget and/or creating a new one with a progress plot.
 
-In the project directory, you can run:
+##  Problem
+It is impossible to find out the student's current position from the home page. On the home page in the <kbd>Your Stats</kbd> card there is no information about the rating, only points. Using them you cannot find out your place in the standings of our special Olympiad :3.  
 
-### `npm start`
+The additional action of going to the overall rating tab is required. But this still does not make it clear that the rating has up or down if the user did not remember the previous result.
+There is no ranking history, which complicates the student’s self-assessment and does not provide a clear understanding of progress and fulfillment of the condition (70% of the best student).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Objectives
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*  Improved User Experience: more visual control
+*  Accent on milestone: measurable and simple indicators to support motivation
+*  Progress history: where we were and where we are
 
-### `npm test`
+## Detailed Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My ideas for enhancing the interface consist of several points:
 
-### `npm run build`
+1. On the Home page, add a position metric to the “Your Stats” <kbd>ant-card</kbd> same as in the Dashboard.
+2. On the Dashboard in the “Your stats”'s <kbd>ant-card</kbd> add an indicator of changes in position in the overall rating hereinafter referred to as “delta”.
+    1. Delta has a numerical expression for more precise measurement.
+    2. Delta can be a different color (gray/green/red) depending on the sign of the number.
+    3. [Optional] Delta can be supplemented with an icon that visually displays the sign of the number. ![image](https://github.com/ksarise/rsschool-app__delta/assets/18985111/c32ab51e-2e35-4d0f-975f-c7b65c76c318)
+       
+       
+        * It would be more logical to use Ant-design icons: 
+          * <kbd>MinusOutlined</kbd> for zero delta
+          * <kbd>CaretUpFilled</kbd> for positive delta
+          * <kbd>CaretDownFilled</kbd> for negative delta
+          
+    But I've already found other free icons and I love them, whatever.  
+  
+  3. On the Dashboard create an additional “statistics” widget , which is a container for a  graph of position history
+      1. The graph (<kbd>Line plot</kbd>) is implemented by already used library <kbd>@antv/g2plot</kbd>.
+      2. The graph displays the exact position of the student(Oy) at a specific time measure(Ox).
+          * I suggest course week number as a time measure because it gives sufficient information and optimizes the number of items stored in the database.
+      3. [Optional] Displaying amount of points in a specific week when selecting a graph point
+      4. [Optional] <kbd>Annotations: line</kbd> showing the 70% limit relative to the best student's performance each week. Along with informative <kbd>annotations: text</kbd>
+      5. [Optional] Applying an <kbd>annotations: regional filter</kbd> when a graph intersects a border line.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Possible Implementation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Using the original design i tried to show a potential implementation of delta and progress graph
+In my mind it might look something like this: ![image](https://github.com/ksarise/rsschool-app__delta/assets/18985111/c97ad3ea-4d9e-4d43-a924-df4841f0fe95)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+And [Deploy](https://ksarise.github.io/rsschool-app__delta/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Build
+[Project source](https://github.com/ksarise/rsschool-app__delta)  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I used <kbd>@opd/g2plot-react</kbd> instead of <kbd>@antv/g2plot</kbd> because I had problems with deployment on pages.
+But the API is common, so there is not much difference.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Also, after deployment, the endless loop stopped working, annotations are not displayed. 
+But I'm just getting to know React and my paws are so little.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Bonus idea
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add achievements for outstanding promotion in the ranking, or vice versa, persistent presence within high positions.
+For example:
+* For promotion to more than 1000 ranks (excluding first month) - badge "High-rise climbing"
+* Stayed in the top 100 for the entire course - badge "Hard-Boiled"
+  and etc.

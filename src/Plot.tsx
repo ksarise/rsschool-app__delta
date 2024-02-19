@@ -43,7 +43,34 @@ const config = {
         fontSize: 16,
       },
     },
-  }
+  },
+  Annotations: [
+    {
+      type: "regionFilter",
+      start: ["min", -700],
+      end: ["max", "0"],
+      color: "gold",
+    },
+    {
+      type: "text",
+      position: ["min", -800],
+      content: "70% border",
+      offsetY: -4,
+      style: {
+        textBaseline: "top",
+        fill: "gold",
+      },
+    },
+    {
+      type: "line",
+      start: ["min", -700],
+      end: ["max", -700],
+      style: {
+        stroke: "gold",
+        lineDash: [2, 2],
+      },
+    },
+  ],
 }
 
 export default  () => {
