@@ -1,9 +1,6 @@
-# Title
-Idea: enhanced UX for rankings (?)
-
 # Description
 
-Feature request for implementation of a new statistical indicator by changing an existing widget and/or creating a new one with a progress plot.
+Feature request for implementation of a new statistical indicator by changing an existing widget and/or creating a new one with a progress chart.
 
 ##  Problem
 It is impossible to find out the student's current position from the home page. On the home page in the <kbd>Your Stats</kbd> card there is no information about the rating, only points. Using them you cannot find out your place in the standings of our special Olympiad :3.  
@@ -65,5 +62,5 @@ But I'm just getting to know React and my paws are so little.
 Add achievements for outstanding promotion in the ranking, or vice versa, persistent presence within high positions.
 For example:
 * For promotion to more than 1000 ranks (excluding first month) - badge "High-rise climbing"
-* Stayed in the top 100 for the entire course - badge "Hard-Boiled"
+* Stayed in the top 100 for the entire course - badge "Hard-Boiled"  
   and etc.
