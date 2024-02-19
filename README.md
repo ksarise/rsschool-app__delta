@@ -25,7 +25,7 @@ My ideas for enhancing the interface consist of several points:
     3. [Optional] Delta can be supplemented with an icon that visually displays the sign of the number. ![image](https://github.com/ksarise/rsschool-app__delta/assets/18985111/c32ab51e-2e35-4d0f-975f-c7b65c76c318)
        
        
-        * It would be more logical to use Ant-design icons: 
+        * It would be more logical to use <kbd>Ant-design icons</kbd>: 
           * <kbd>MinusOutlined</kbd> for zero delta
           * <kbd>CaretUpFilled</kbd> for positive delta
           * <kbd>CaretDownFilled</kbd> for negative delta
@@ -38,7 +38,9 @@ My ideas for enhancing the interface consist of several points:
           * I suggest course week number as a time measure because it gives sufficient information and optimizes the number of items stored in the database.
       3. [Optional] Displaying amount of points in a specific week when selecting a graph point
       4. [Optional] <kbd>Annotations: line</kbd> showing the 70% limit relative to the best student's performance each week. Along with informative <kbd>annotations: text</kbd>
-      5. [Optional] Applying an <kbd>annotations: regional filter</kbd> when a graph intersects a border line.
+      5. [Optional] Applying an <kbd>annotations: regional filter</kbd> when a graph intersects a border line. ![image](https://github.com/ksarise/rsschool-app__delta/assets/18985111/320d7327-25f2-4e0f-a97e-77a3aea041ca)
+
+
 
 ## Possible Implementation
 
@@ -49,18 +51,14 @@ In my mind it might look something like this: ![image](https://github.com/ksaris
 And [Deploy](https://ksarise.github.io/rsschool-app__delta/)
 
 ## Build
-[Project source](https://github.com/ksarise/rsschool-app__delta)  
 
 I used <kbd>@opd/g2plot-react</kbd> instead of <kbd>@antv/g2plot</kbd> because I had problems with deployment on pages.
 But the API is common, so there is not much difference.  
 
-Also, after deployment, the endless loop stopped working, annotations are not displayed. 
+Also, after deployment idkw appeared some unexpected bugs:
+- the endless loop stopped working
+- all types of annotations are not displayed
+- very strange line shadow
+- series field crashes everything.
+  
 But I'm just getting to know React and my paws are so little.
-
-### Bonus idea
-
-Add achievements for outstanding promotion in the ranking, or vice versa, persistent presence within high positions.
-For example:
-* For promotion to more than 1000 ranks (excluding first month) - badge "High-rise climbing"
-* Stayed in the top 100 for the entire course - badge "Hard-Boiled"  
-  and etc.
