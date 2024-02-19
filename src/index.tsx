@@ -1,15 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import Plot from './Plot.js';
-import reportWebVitals from './reportWebVitals';
+import Plot from './Plot';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  //TODO: separate in different modules
+ReactDOM.render(
   <React.StrictMode>
-    {/* an attempt to recreate the original rssapp design and dom structure. */}
-    <div className="ant-layout">
+      {/* an attempt to recreate the original rssapp design and dom structure. */}
+      <div className="ant-layout">
       <main className="ant-layout-content">
         <div className="ant-spin-container">
           <div className="ant-card">
@@ -40,7 +37,7 @@ root.render(
                     </span>
                     <span className="ant-typography css-nllxry position-block">
                       {/* Position value */}
-                       <strong className='position'>1532/1888</strong>
+                       <strong className='position'>1500/1888</strong>
                       {/* Diffs block start*/}
                       <span className='diffs'>
                         <span className="arrows">
@@ -66,7 +63,7 @@ root.render(
                     </span>
                     <span className="ant-typography css-nllxry">
                       {/* Score value */}
-                      <strong className='score'>369/1373</strong>
+                      <strong className='score'>200/1373</strong>
                     </span>
                   </div>
                 </div>
@@ -97,7 +94,6 @@ root.render(
         </div>
       </main>
     </div>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-reportWebVitals();
